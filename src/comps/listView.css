@@ -1,0 +1,51 @@
+.main-bg{
+    border-radius: 5px;
+    background-color: rgb(232, 227, 227);;
+   
+}
+
+.first{
+    margin-right: 80px;
+    padding-right: 80px;
+}
+
+.last{
+    
+    padding-left: 80px;
+}
+
+.middle{
+    margin-right: 100px;
+    padding-right: 100px;
+    margin-left: 100px;
+    padding-left: 80px;
+}
+.hum{
+    height: 60px;
+    width: 60px;
+}
+
+.last{
+    margin-left: -40px;
+}
+.words{
+    margin-left: 18px;
+    line-height: 3;
+}
+
+@media screen and (max-width: 980px) {
+    
+    .middle{
+        margin-right: 0px;
+        padding-right: 0px;
+        margin-left: 0px;
+        padding-left: 0px;
+    }
+   
+    .words{
+        margin-left: 0px;
+        line-height: 3;
+    }
+    
+    
+}

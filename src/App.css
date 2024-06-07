@@ -1,38 +1,91 @@
-.App {
-  text-align: center;
+.inp{
+   width: 35rem;
+   margin: 2rem;
+   background-color: white;
+   padding: 5rem;
+   
+   border-radius: 4px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.cont{
+  background: linear-gradient(to bottom, rgb(151, 231, 243), rgb(44, 124, 237));
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.mybtn{
+  margin: 3rem;
+   height: 2.5rem;
+   width: 90px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.placename{
+   color: rgb(90, 90, 90);
+   font-size: 20px;
+   line-height: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.img{
+  height:198px;
+  width: 198px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.temp{
+  font-size: 100px;
+  margin-top: 20px;
+}
+
+.border-div{
+  border-right: 1px solid grey;
+  
+}
+
+.desc{
+  font-size: 25px;
+  color:rgb(90, 90, 90);
+  margin-left: 60px;
+}
+
+.min{
+  font-size: 23px;
+}
+
+
+
+@media screen and (max-width: 980px) {
+  .inp{
+    width: 20rem;
+    margin: 1rem;
+   
+ }
+
+ .mybtn{
+   margin-top: 20px;
+   height: 2rem;
+   width: 80px;
+   font-size: 12px;
+}
+
+.img{
+  height:100px;
+  width: 100px;
+}
+
+.temp{
+  font-size: 48px;
+  margin-top: 14px;
+}
+
+.desc{
+  font-size: 20px;
+  color:rgb(90, 90, 90);
+  margin-left: 15px;
+}
+
+.border-div{
+  border-right: 1px solid grey;
+  height: 170px;
+}
+.min{
+  font-size: 15px;
+}
+
 }
