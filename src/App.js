@@ -6,7 +6,7 @@ import './App.css';
 import ListView from './comps/listView';
 
 export default function App() {
-
+  //------------------API useStates----------------------------
   const [cityname, cityfunc] = useState("Valsad");
   const [date, datefunc] = useState(null);
   const [temp,tempfunc] = useState(null);
@@ -20,27 +20,29 @@ export default function App() {
 
   const [icon, iconfunc] = useState(null);
 
-
+  //----------------------------------Weather Icons--------------
   const weatherIcon = [
     "https://cdn0.iconfinder.com/data/icons/40-weather-conditions/128/partly_cloudy-1024.png", //cloudy
     "https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather07-1024.png", //rainy
-    "https://cdn1.iconfinder.com/data/icons/smashicons-weather-flat/60/68_-_Sunny_Flat-1024.png", //suuny
+    "https://cdn1.iconfinder.com/data/icons/smashicons-weather-flat/60/68_-_Sunny_Flat-1024.png", //sunny
     "https://cdn2.iconfinder.com/data/icons/weather-24/256/Snow_Day-1024.png" //snowy
-
   ]
+
+  //----------------When the application starts------------------
   useEffect(()=>{
     const date = new Date();
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     datefunc(Intl.DateTimeFormat('en-US', options).format(date));
-    //iconfunc(weatherIcon[2])
     citysearch("Valsad");
 
   },[])
 
+  //-------------When the button is clicked-----------------------
   var clickrun = ()=>{
      citysearch(cityname)
   }
 
+  //-------------Fetches the WeatherApi data----------------------
   const citysearch = (mycityname)=>{
     var url = `https://nominatim.openstreetmap.org/search?format=json&q=${mycityname}`;
 
@@ -116,7 +118,7 @@ export default function App() {
     <div>
       
         <Container style={{marginTop:"30px",borderRadius:"10px", height:"800px"}} className='cont'>
-          
+          {/*-----------------Search Bar--------------------------*/}
           <div className='d-flex p-4 col'>
             <div className='col-9'>
                  <TextField variant="standard" placeholder='Enter the city name' className='inp ' onChange={(e)=>cityfunc(e.target.value)}/>
@@ -145,14 +147,14 @@ export default function App() {
             <div className='ps-5'>
                <br></br>
                <p className='temp'>{temp} &deg; </p>
-               {/* <p className='min'><span style={{color:"rgb(90, 90, 90)"}}> {tempmin} </span> |  <span style={{color:"rgb(90, 90, 90)"}}>{tempmax}</span></p> */}
-              
+            
                <span><img src="https://cdn3.iconfinder.com/data/icons/weather-thick-line/1000/2266-Below_Sea_Level-512.png" height={40} width={40} /></span><span className='pe-2'>{sea} hPa</span> 
             
             </div>
 
           </div>
 
+          {/*-----------------Listview--------------------------*/}
           <div>
             <ListView humidity={hum} wind={myywind} cloud={rain}/>
           </div>
